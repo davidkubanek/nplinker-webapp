@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y git
 # Clone my git repo of NPLinker (this gives me control over contents of 'install-nplinker-deps')
 RUN git clone https://github.com/davidkubanek/nplinker.git
 
+# Set the environment variable
+ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
+
 RUN set -eux && \
     apt update && \
     apt install -y gcc && \
