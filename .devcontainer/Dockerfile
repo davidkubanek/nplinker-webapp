@@ -7,22 +7,6 @@ ADD . .
 # Install Git (if not already installed)
 RUN apt-get update && apt-get install -y git
 
-# Clone my git repo of NPLinker (this gives me control over contents of 'install-nplinker-deps')
-RUN git clone https://github.com/davidkubanek/nplinker.git
-
-
-# Clone your Git repository containing your custom code
-#RUN git clone https://github.com/your-username/your-git-repo.git /tmp/your-git-repo
-RUN git clone https://github.com/davidkubanek/nplinker-pckg.git /tmp/nplinker-pckg
-
-# Copy your custom code into the nplinker directory
-RUN cp -r /tmp/nplinker-pckg/nplinker/* /usr/local/lib/python3.10/site-packages/nplinker/
-
-# Optionally, remove the original nplinker package files
-# RUN rm -rf /usr/local/lib/python3.10/site-packages/nplinker/*
-
-
-
 # Set the environment variable
 ENV SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True
 
