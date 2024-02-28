@@ -18,7 +18,8 @@ RUN set -eux && \
     apt install -y gcc && \
     pip install -U pip setuptools && \
     pip install -r requirements.txt && \
-    install-nplinker-deps
+    install-nplinker-deps && \
+    pip install biopython==1.70  # Install biopython version 1.70
 
 # set a HOME variable because things often break if it's left unset
 ENV HOME "/data"
