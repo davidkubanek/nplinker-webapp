@@ -10,39 +10,20 @@
 import os
 import sys
 print('\n ==== Running NPLinker demo1 ==== \n \n')
-print('dir:', os.getcwd())
-og_dir = os.getcwd()
 
-# actiavte this if using vs code debugging
+# activate this if using vs code debugging
 # os.chdir(og_dir + 'workspaces/nplinker-webapp/')
 # og_dir = os.getcwd()
-
-# Specify the relative path to the new directory
-#relative_path = "demo/nplinker-1.3.2/src/nplinker"
-relative_path = "demo/nplinker-1.3.2/src/nplinker"
-# Construct the absolute path by joining the current working directory and the relative path
-new_directory = os.path.abspath(relative_path)
-# Change the working directory
-os.chdir(new_directory)
-print('dir:', os.getcwd())
-
-# print current repo for importing packages
-print(sys.path)
-sys.path.append('../demo/nplinker-1.3.2/src')
 
 # import the main NPLinker class from my local version of the nplinker module
 from nplinker.nplinker import NPLinker
 
 
-# Change the working directory back to og_dir
-os.chdir(og_dir)
-print('dir:', os.getcwd())
 # In[2]:
 
 
 # the standard method of loading a dataset configuration is to pass the filename
 # of a TOML configuration file to the NPLinker constructor.
-# npl = NPLinker("./nplinker_demo1.toml")
 npl = NPLinker("./nplinker_demo1.toml")
 # loading the actual data files can take some time depending on the dataset,
 # so this is done separately by calling the load_data method.
